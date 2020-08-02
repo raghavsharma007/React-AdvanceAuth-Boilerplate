@@ -6,13 +6,38 @@ import {
 } from './types';
 import axios from 'axios';
 
-export const load_user = () = async dispatch => {
-    
-    
+export const load_user = () => async dispatch => {
+    if (localStorage.getItem('access')) {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `JWT ${localStorage.getItem('access')}`,
+                'Accept': 'application/json'
+            }
+        };
+        try {
+            const res = await axios.get(`${process.env.REACT_APP_API_URL}/auth/users/me/`, config)
+            dispatch({
+                type: USER_LOADED_SUCCESS,
+                payload: res.data
+            })   
+        } catch(err) {
+            console.log(err);
+            console.log("error");
+            dispatch({
+                type: USER_LOADED_FAIL,
+            });
+        }
+
+    } else {
+        dispatch({
+            type: USER_LOADED_FAIL,
+        });
+    } 
 }
 
 
-export const login = (email, password) = async dispatch => {
+export const login = (email, password) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
@@ -26,7 +51,9 @@ export const login = (email, password) = async dispatch => {
         dispatch({
             type: LOGIN_SUCCESS,
             payload: res.data
-        })
+        });
+
+        dispatch(load_user());
 
     } catch(err) {
         console.log(err);

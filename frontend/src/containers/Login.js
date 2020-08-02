@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import { Link, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { login } from '../actions/auth';
 
-function Login() {
+function Login({login}) {
 
     const [formData, setFormData] = useState({
         email: '',
@@ -17,7 +18,7 @@ function Login() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        //login(email, password);
+        login(email, password);
     }
 
     //check if user authenticated?
@@ -53,7 +54,7 @@ function Login() {
                 Don't have an account?<Link to="/signup">Sign Up</Link>
             </p>
             <p>
-                Forgot your password?<Link to="/reset_passsword">Reset Password</Link>
+                Forgot your password?<Link to="/reset_password">Reset Password</Link>
             </p>
         </div>
     )
@@ -63,4 +64,4 @@ function Login() {
 //     is authenticated
 // })
 
-export default connect(null)(Login)
+export default connect(null, {login})(Login)
