@@ -30,11 +30,12 @@ function Login({login}) {
             <h1>Sign In</h1>
             <p>Sign into your account</p>
             <form onSubmit={e => onSubmit(e)}>
-                <div className="form-group">
+                <div className="form-group d-flex flex-column">
                     <input
                         type="email"
                         placeholder="email"
                         value={email}
+                        className="form-control-sm w-50 m-3"
                         name="email"
                         onChange={e => onChange(e)}
                         required
@@ -43,11 +44,12 @@ function Login({login}) {
                         type="password"
                         placeholder="password"
                         value={password}
+                        className="form-control-sm w-50 m-3"
                         name="password"
                         onChange={e => onChange(e)}
                         required
                     />
-                    <button>Login</button>
+                    <button className="btn btn-primary">Login</button>
                 </div>
             </form>
             <p>
