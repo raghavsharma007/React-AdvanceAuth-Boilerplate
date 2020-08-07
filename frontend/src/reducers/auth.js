@@ -7,7 +7,11 @@ import {
     AUTHENTICATED_FAIL,
     AUTHENTICATED_SUCCESS,
     USER_LOADED_SUCCESS,
-    USER_LOADED_FAIL
+    USER_LOADED_FAIL,
+    RESET_PASSWORD_SUCCESS,
+    RESET_PASSWORD_FAIL,
+    RESET_PASSWORD_CONFIRM_SUCCESS,
+    RESET_PASSWORD_CONFIRM_FAIL,
 } from '../actions/types';
 
 const initialState = {
@@ -65,6 +69,13 @@ export default function(state = initialState, action) {
                 refresh: null,
                 isAuthenticated: false,
                 user: null
+            }
+        case RESET_PASSWORD_SUCCESS:
+        case RESET_PASSWORD_FAIL:
+        case RESET_PASSWORD_CONFIRM_SUCCESS:
+        case RESET_PASSWORD_CONFIRM_FAIL:
+            return {
+                ...state
             }
         default:
             return state
