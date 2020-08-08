@@ -17,7 +17,7 @@ function Layout(props) {
     }, []);
 
     return (
-        <div>
+        <div className="grid sm:grid-cols-5 gap-2">
             <NavBar />
             {props.children}
         </div>

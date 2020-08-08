@@ -18019,6 +18019,10 @@ video {
           animation: bounce 1s infinite;
 }
 
+a.active{
+  color: blueviolet;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

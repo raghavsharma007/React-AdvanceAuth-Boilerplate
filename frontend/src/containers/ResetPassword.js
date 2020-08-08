@@ -26,7 +26,7 @@ function ResetPassword({reset_password}) {
         return <Redirect to='/' />
     }
     return (
-        <div className="mx-5">
+        <div className="col-span-4">
             <form onSubmit={e => onSubmit(e)}>
                 <input 
                     type="email"

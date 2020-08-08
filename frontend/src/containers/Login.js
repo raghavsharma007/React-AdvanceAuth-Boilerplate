@@ -27,11 +27,11 @@ function Login({login, isAuthenticated}) {
 
 
     return (
-        <div className="">
+        <div className="col-span-4">
             <h1>Sign In</h1>
             <p>Sign into your account</p>
             <form onSubmit={e => onSubmit(e)}>
-                <div className="flex flex-col w-1/3 mx-auto border-2 p-5 rounded-lg">
+                <div className="flex flex-col w-1/2 mx-auto border-2 p-5 rounded-lg shadow-md">
                     <input
                         type="email"
                         placeholder="email"

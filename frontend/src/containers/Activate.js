@@ -2,7 +2,7 @@ import React from 'react'
 
 function Activate() {
     return (
-        <div>
+        <div className="col-span-4">
             Activate
         </div>
     )

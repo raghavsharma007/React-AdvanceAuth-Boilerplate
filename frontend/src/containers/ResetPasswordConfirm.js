@@ -28,7 +28,7 @@ function ResetPasswordConfirm(props) {
     return <Redirect to='/' />
 
     return (
-<div className=''>
+        <div className='col-span-4'>
             <form onSubmit={e => onSubmit(e)}>
                 <div className=''>
                     <input 
