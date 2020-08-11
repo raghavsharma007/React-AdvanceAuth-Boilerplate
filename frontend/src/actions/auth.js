@@ -117,7 +117,6 @@ export const signup = ({ name, email, password, re_password }) => async dispatch
             'Content-Type': 'application/json'
         }
     }
-
     const body = JSON.stringify({ name, email, password, re_password }); 
 
     try {
