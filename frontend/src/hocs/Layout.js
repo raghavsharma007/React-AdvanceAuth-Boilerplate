@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { checkAuthenticated, load_user } from '../actions/auth';
 
 function Layout(props) {
-    useEffect(() => {
+    useEffect((props) => {
         const fetchData = async () => {
             try {
                 await props.checkAuthenticated();
@@ -17,7 +17,7 @@ function Layout(props) {
     }, []);
 
     return (
-        <div className="grid sm:grid-cols-5 gap-2">
+        <div className="block sm:grid grid-cols-5 gap-2">
             <NavBar />
             {props.children}
         </div>

@@ -28,21 +28,13 @@ function NavBar({isAuthenticated, logout}) {
     );
     return (
         <div className="col-span-1">
-            <nav className="">
+            <nav className="flex justify-between sm:block">
                 <Link className="uppercase p-1 font-semibold" to='/'>Auth System</Link>
-                <button 
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbarNav"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span className=""></span>
-                </button>
                 <div className="" id="">
-                    <ul className="">
+                    <div className="pl-16 m-1 list-none sm:hidden">
+                            <svg viewBox="0 0 20 20" fill="currentColor" className="menu w-6 h-6"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+                    </div>
+                    <ul className="p-2">
                         <li className="p-1">
                             <NavLink className="flex" exact to='/'>
                                 <svg fill="none" className="h-5 mr-1" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>Home
